@@ -137,7 +137,7 @@ def specify_best(model, X, y, typ = 'RF'):
     best parameter values for min samples split, max features, or kernel gamma and C
     '''
     if typ == 'RF':
-        params =  {'min_samples_split': np.arange(2, 100, 20), 'max_features': np.arange(2,15,4)}
+        params =  {'min_samples_split': np.arange(2, 100, 20), 'max_features': np.arange(2,10,2)}
     elif typ == 'svr':
          params =  {'kernel': ['rbf', 'linear', 'sigmoid'], 'gamma': np.arange(0.001,0.9,0.1), 'C': [0.0001,0.01,1,10,100]}
     clf = GridSearchCV(model, params,cv = 5)
